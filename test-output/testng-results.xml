@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-09T11:57:56 IST" name="Default suite" finished-at="2023-03-09T11:59:54 IST" duration-ms="117855">
+  <suite started-at="2023-03-21T13:01:39 IST" name="Default suite" finished-at="2023-03-21T13:01:58 IST" duration-ms="18670">
     <groups>
     </groups>
-    <test started-at="2023-03-09T11:57:56 IST" name="Default test" finished-at="2023-03-09T11:59:54 IST" duration-ms="117855">
-      <class name="com.moneycontrol.Pages.HomePage">
-        <test-method signature="login()[pri:0, instance:com.moneycontrol.Pages.HomePage@1b2abca6]" started-at="2023-03-09T11:57:57 IST" name="login" finished-at="2023-03-09T11:59:54 IST" duration-ms="117496" status="PASS">
+    <test started-at="2023-03-21T13:01:39 IST" name="Default test" finished-at="2023-03-21T13:01:58 IST" duration-ms="18670">
+      <class name="com.moneycontrol.Pages.ReadingExcelFile">
+        <test-method signature="readingExcelFile()[pri:0, instance:com.moneycontrol.Pages.ReadingExcelFile@4efc180e]" started-at="2023-03-21T13:01:39 IST" name="readingExcelFile" finished-at="2023-03-21T13:01:57 IST" duration-ms="18252" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-      </class> <!-- com.moneycontrol.Pages.HomePage -->
+        </test-method> <!-- readingExcelFile -->
+      </class> <!-- com.moneycontrol.Pages.ReadingExcelFile -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

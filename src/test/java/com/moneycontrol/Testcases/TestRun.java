@@ -13,7 +13,8 @@ import com.moneycontrol.Pages.*;
 public class TestRun extends Base {
 	WebDriver driver;
 	HomePage homepage = new HomePage();
-	
+	GlobalMarkets gm = new GlobalMarkets();
+	Portfolio portfolio = new Portfolio();
 	
 	@BeforeTest
 	public void invokeBrowser() throws IOException, InterruptedException {
@@ -26,8 +27,22 @@ public class TestRun extends Base {
 		homepage.login();
 	}
 	
+	@Test(dependsOnMethods = { "test1" })
+	public void test3() throws InterruptedException, IOException {
+		portfolio.addStock();
+		portfolio.sellStock();
+	}
+	
+	
+	@Test(enabled = false)
+	public void test2() throws IOException, InterruptedException {
+		homepage.marketsPage();
+		gm.globalMarkets();
+		
+	}
+	
 	@AfterTest
 	public void closeBrowser() {
-		driver.close();
+		tearDown();
 	}
 }

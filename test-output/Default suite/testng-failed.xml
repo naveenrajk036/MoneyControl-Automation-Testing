@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.moneycontrol.Pages.HomePage">
+      <class name="com.moneycontrol.Pages.ReadingExcelFile">
         <methods>
-          <include name="marketsPage"/>
+          <include name="readingExcelFile"/>
         </methods>
-      </class> <!-- com.moneycontrol.Pages.HomePage -->
+      </class> <!-- com.moneycontrol.Pages.ReadingExcelFile -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

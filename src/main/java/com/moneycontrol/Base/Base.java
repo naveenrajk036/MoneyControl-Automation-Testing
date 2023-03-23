@@ -63,6 +63,11 @@ public class Base {
 		js.executeScript("arguments[0].scrollIntoView();", element);
 		
 	}
+	
+	public void hold(By element) {
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	 
 	public void tearDown() {
 		driver.close();
 	}

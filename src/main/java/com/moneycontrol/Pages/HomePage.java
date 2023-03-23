@@ -37,14 +37,11 @@ public class HomePage extends Base {
 	By username = By.xpath("//span[@class='usr_nm']");
 	
 	
-	@Test
+	
 	public void login() throws IOException, InterruptedException {
 		
-		
-		
-		
+		invokeBrowser();
 		Actions action = new Actions(driver);
-		
 		action.moveToElement(driver.findElement(user)).build().perform();
 		driver.findElement(login).click();
 		driver.switchTo().frame(driver.findElement(loginFrame));
@@ -56,10 +53,11 @@ public class HomePage extends Base {
 		/*driver.findElement(otp).click();
 		Scanner sc = new Scanner(System.in);
 		String enterOTP = sc.nextLine();*/
+		
 		driver.findElement(pswd).sendKeys(pass);
 		Thread.sleep(2000);
 		driver.findElement(loginBtn).click();
-		//Thread.sleep(10000);
+		Thread.sleep(18000);
 		driver.switchTo().defaultContent();
 		System.out.println(driver.getTitle());
 		String accName = driver.findElement(username).getText();
