@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.moneycontrol.Pages.ReadingExcelFile">
+      <class name="com.moneycontrol.Testcases.TestRun">
         <methods>
-          <include name="readingExcelFile"/>
+          <include name="closeBrowser"/>
+          <include name="test1"/>
+          <include name="test3"/>
+          <include name="invokeBrowser"/>
         </methods>
-      </class> <!-- com.moneycontrol.Pages.ReadingExcelFile -->
+      </class> <!-- com.moneycontrol.Testcases.TestRun -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

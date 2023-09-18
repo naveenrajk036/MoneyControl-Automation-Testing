@@ -14,6 +14,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class Base {
 
@@ -22,18 +24,19 @@ public class Base {
 	WebDriverWait wait;
 	JavascriptExecutor js;
 	
-	
 	By mainWeb = By.xpath("//span/a");
 	By popup = By.id("wzrk-cancel");
 	public void invokeBrowser() throws IOException, InterruptedException {
 		prop = getProperties();
 		String browserName = prop.getProperty("browser");
 		if(browserName.equalsIgnoreCase("Chrome")) {
-			System.getProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\Drivers\\chromedriver.exe");
+			//System.getProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\Drivers\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
 		else if(browserName.equalsIgnoreCase("Edge")) {
-			System.getProperty("webdriver.edge.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\Drivers\\msedgedriver.exe");
+			//System.getProperty("webdriver.edge.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\Drivers\\msedgedriver.exe");
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
 		wait = new WebDriverWait(driver,Duration.ofSeconds(50));
@@ -41,7 +44,10 @@ public class Base {
 		String website = prop.getProperty("url");
 		driver.get(website);
 		
-		driver.findElement(mainWeb).click();
+		WebElement mainPage = driver.findElement(mainWeb);
+		if(mainPage.isDisplayed()) {
+			driver.findElement(mainWeb).click();
+		}
 		Thread.sleep(2000);
 		driver.findElement(popup).click();
 	}

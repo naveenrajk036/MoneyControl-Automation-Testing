@@ -30,17 +30,19 @@ public class HomePage extends Base {
 	By user = By.xpath("//a[@class=	'userlink']");
 	By login = By.xpath("//a[@title='Log In']");
 	By loginFrame = By.xpath("//iframe[@id='myframe']");
-	By email = By.xpath("//input[@placeholder='Email or Mobile Number or User ID']");
+	By email = By.xpath("//input[@placeholder='Email ID/Mobile No. or User Id']");
 	By otp = By.id("USE_OTP_BTN");
-	By pswd = By.xpath("//div[@class='textfieldbox PR usepwd']/input[@id='pwd']");
-	By loginBtn = By.id("ACCT_LOGIN_SUBMIT");
+	By pswd = By.xpath("//*[@id=\"mc_login\"]/form/div[2]/div[1]/input");
+	//By loginBtn = By.id("ACCT_LOGIN_SUBMIT");
+	By loginBtn = By.xpath("//button[@class='continue login_btn']");
+	//By loginBtn = By.className("continue login_btn");
 	By username = By.xpath("//span[@class='usr_nm']");
 	
 	
 	
 	public void login() throws IOException, InterruptedException {
 		
-		invokeBrowser();
+		//invokeBrowser();
 		Actions action = new Actions(driver);
 		action.moveToElement(driver.findElement(user)).build().perform();
 		driver.findElement(login).click();
